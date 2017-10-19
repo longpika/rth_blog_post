@@ -1,0 +1,47 @@
+@media screen and (min-width: 768px) {
+  ul.navbar-nav {
+    float: right;
+    margin: 0 30px;
+  }
+  ul.navbar-nav, li, a {
+    height: 80px;
+  }
+  ul.navbar-nav li a {
+    padding: 0px;
+    margin: 0px;
+    line-height: 80px;
+    width: 85px;
+    text-align: center;
+    text-decoration: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .home-wrapper {
+    .navigation {
+      .blog-title {
+        padding-left: 15px;
+      }
+      .navbar-header {
+        button.navbar-toggle, button.navbar-toggle:hover {
+          background: none;
+          box-shadow: none;
+          margin-top: 22px;
+        }
+      }
+      .navbar-collapse {
+        -webkit-box-shadow: none;
+        border-color: none;
+        padding: 0px;
+        ul.navbar-nav {
+          margin: 0px;
+          background-color: rgba(0, 0, 0, 0.85);
+          li {
+            a {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

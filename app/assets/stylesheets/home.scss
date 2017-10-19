@@ -12,8 +12,12 @@
       color: #fafafa;
       padding-left: 30px;
     }
-    .col-xs-4 nav.navbar-inverse {
-      background-color: none;
+    nav.navbar {
+      margin-bottom: 0px;
+    }
+    nav.navbar-inverse {
+      background-color: transparent;
+      border-color: transparent;
     }
   }
 }
