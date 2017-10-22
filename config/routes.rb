@@ -8,5 +8,10 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   resources :blog_posts do
+    collection do
+      get "new_blog"
+      post "create_blog"
+      get "sort_blogs"
+    end
   end
 end

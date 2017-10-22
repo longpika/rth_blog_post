@@ -9,4 +9,96 @@ form.blog-form {
     width: 100%;
     margin: 15px auto;
   }
+  iframe.wysihtml5-sandbox {
+    width: 100% !important;
+  }
+}
+.blog-wrapper {
+  &.home-page {
+    ul {
+      border: 2px solid #00a5de;
+      li {
+        height: auto;
+        font-weight: normal;
+        &.blog-head-bar {
+          border-bottom: 2px solid #00a5de;
+          font-weight: bold;
+        }
+        &:nth-child(odd) {
+          border-right: 2px solid #00a5de;
+        }
+      }
+    }
+  }
+  .blog-tools {
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    a.checkbox-styled {
+      text-decoration: none;
+      padding-left: 30px;
+      display: inline-block;
+      height: 35px;
+      width: 35px;
+      background-image: url(/assets/checkbox.png);
+      background-repeat: no-repeat;
+      background-position: -18px -46px;
+      background-size: 175px 127px;
+      text-indent: -9999px;
+      &:hover {
+        background-position: -70px -46px;
+        background-size: 175px 127px;
+      }
+      &.clicked {
+        background-position: -122px -46px;
+        background-size: 175px 127px;
+      }
+    }
+    span.filter-text {
+      height: 35px;
+      display: inline-block;
+      vertical-align: text-bottom;
+    }
+    input[type="text"] {
+      width: 100%;
+      display: block;
+      margin-top: 15px;
+      outline: none;
+      height: 35px;
+      line-height: 35px;
+      border-radius: 3px;
+      padding-left: 15px;
+      border: 1px solid #ccc;
+    }
+  }
+  li {
+    height: 45px;
+    line-height: 45px;
+    padding: 0px 15px;
+    font-weight: bold;
+    &:nth-child(even) {
+      width: 35%;
+      float: right;
+    }
+    &:nth-child(odd) {
+      width: 65%;
+      float: left;
+      border-right: 2px solid #00a5de;
+    }
+  }
+  li.blog-head-bar {
+    display: block;
+    border-bottom: 2px solid #00a5de;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  hr {
+    clear: both;
+    height: 2px;
+    background-color: #00a5de;
+    margin-bottom: 0px;
+  }
 }

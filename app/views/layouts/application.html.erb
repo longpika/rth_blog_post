@@ -4,7 +4,7 @@
     <title>RthBlogPost</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -26,12 +26,12 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="/blog_posts">Blogs</a></li>
+                  <li><a href="/" data="home">Home</a></li>
+                  <li><a href="/blog_posts" >Blogs</a></li>
                   <% if current_account.nil? %>
                     <li><a href="/accounts/sign_in">Login</a></li>
                   <% else %>
-                    <li><a href="/accounts/sign_out" method='delete'>Logout</a></li>
+                    <li><a href="#" class="log-out">Logout</a></li>
                   <% end %>
               </ul>
           </div>
@@ -41,7 +41,7 @@
       <div class="home-content clearfix">
         <div class="container clearfix">
           <div class="decorating-place clearfix"></div>
-          <div class="newest-content-wrapper clearfix">
+          <div class="blog-wrapper clearfix">
             <%= yield %>
           </div>
         </div>

@@ -1,18 +1,36 @@
 <div class="blog-wrapper clearfix">
-  <div class="container clearfix">
-    <ul class="blog-content clearfix">
-      <% if @blog_posts.length > 0 %>
-        <% @blog_posts.each do |f| %>
-          <li class="title">
-            <%= f.title %>
-          </li>
-          <li class="author-detail">
-          </li>
-        <% end %>
-      <% else %>
-        <li>There are no existing blog! </li>
-      <% end %>
-      <a href="/blog_posts/new">Create new blog</a>
-    </ul>
+  <div class="blog-tools clearfix">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 clearfix padding-0">
+      <div style="height:35px; line-height:35px;">
+        <a href="#" class="sort-btn checkbox-styled"></a>
+        <span class="filter-text">Sort Blog Posts</span>
+      </div>
+      <input type="text" class="text-filter txt-cls-deco" placeholder="Type here to filter blog posts" />
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 clearfix padding-0">
+
+    </div>
   </div>
+  <ul class="blog-content clearfix">
+    <li class="blog-head-bar title">Blog Title</li>
+    <li class="blog-head-bar author">Author Info</li>
+    <% if @blog_posts.length > 0 %>
+      <% @blog_posts.each do |f| %>
+        <li class="title">
+          <a href="/blog_posts/<%= f.id%>">
+            <%= "#{f.title.truncate(30)} (#{f.created_at.strftime('%d-%b-%Y %H:%M')})" %>
+          </a>
+        </li>
+        <li class="author-detail">
+          <%= f.account.full_name %>
+        </li>
+      <% end %>
+    <% else %>
+      <li>There are no existing blog! </li>
+    <% end %>
+    <hr />
+    <% unless current_account.nil? %>
+      <a href="#" class="btn-new-blog new-blog-deco clearfix">Create new blog</a>
+    <% end %>
+  </ul>
 </div>

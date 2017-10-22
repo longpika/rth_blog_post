@@ -5,4 +5,8 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :blog_posts, dependent: :destroy
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

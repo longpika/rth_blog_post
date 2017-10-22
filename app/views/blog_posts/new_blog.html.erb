@@ -1,0 +1,69 @@
+<%= form_for :blog_post, method: 'post', html: { class: 'blog-form clearfix padding-0'},
+  url: '/blog_posts' do |f| %>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <h3>Title</h3>
+      <%= f.text_field :title %>
+      <h3>Content</h3>
+      <div id="wysihtml5-toolbar" style="display: none;" class="clearfix">
+        <a data-wysihtml5-command="bold">bold</a>
+        <a data-wysihtml5-command="italic">italic</a>
+        <a data-wysihtml5-command="underline">underline</a>
+        <a data-wysihtml5-command="insertImage">insert image</a>
+        <div data-wysihtml5-dialog="insertImage" style="display: none;">
+          <label>
+            Image:
+            <input data-wysihtml5-dialog-field="src" value="http://">
+          </label>
+          <label>
+            <a data-wysihtml5-dialog-action="save">OK</a>
+            <a data-wysihtml5-dialog-action="cancel">Cancel</a>
+          </label>
+        </div>
+
+        <a data-wysihtml5-command="insertOrderedList">insert ordered list</a>
+        <a data-wysihtml5-command="insertUnorderedList">
+          insert unordered list</a>
+
+        <a data-wysihtml5-command="foreColor"
+          data-wysihtml5-command-value="red">red</a>
+        <a data-wysihtml5-command="foreColor"
+          data-wysihtml5-command-value="green">green</a>
+        <a data-wysihtml5-command="foreColor"
+          data-wysihtml5-command-value="blue">blue</a>
+
+        <a data-wysihtml5-command="createLink">insert link</a>
+        <div data-wysihtml5-dialog="createLink" style="display: none;">
+          <label>
+            Link:
+            <input data-wysihtml5-dialog-field="href"
+              value="http://" class="text">
+          </label>
+          <a data-wysihtml5-dialog-action="save">OK</a>
+          <a data-wysihtml5-dialog-action="cancel">Cancel</a>
+        </div>
+      </div>
+      <%= f.text_area :content, id: 'wysihtml5-textarea', class: 'blog-content-style'  %>
+      <%= f.hidden_field :account_id, value: current_account.id %>
+      <%= f.button "Create" %>
+    </div>
+<% end %>
+<br />
+<script>
+  var wysihtml5ParserRules = {
+    tags: {
+      "img": {
+        "check_attributes": {
+          "width": "numbers",
+          "alt": "alt",
+          "src": "url",
+          "height": "numbers"
+        }
+      }
+    }
+  };
+  var editor = new wysihtml5.Editor("wysihtml5-textarea", {
+    toolbar:      "wysihtml5-toolbar",
+    stylesheets:  "<%= stylesheet_path('wysiwyg') %>",
+    parserRules:  wysihtml5ParserRules,
+  });
+</script>

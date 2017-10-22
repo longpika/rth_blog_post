@@ -1,6 +1,53 @@
 .padding-0 {
   padding: 0 !important;
 }
+ul.blog-content {
+  color: #00a5de;
+  margin: 15px 0 !important;
+  border: 2px solid #00a5de;
+  border-radius: 5px;
+  padding: 0px;
+  background-color: #fff;
+  list-style: none;
+  #blog_post_title {
+    width: 100%;
+  }
+  a.new-blog-deco {
+    text-decoration: none;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 2px solid #00a5de;
+    margin: 10px auto;
+    display: block;
+    width: 200px;
+    color: #00a5de;
+    &:hover {
+      background-color: #00a5de;
+      color: #fff;
+      border: 1px solid transparent;
+    }
+  }
+  #wysihtml5-toolbar {
+    a {
+      text-decoration: none;
+      padding: 5px 11px;
+      border: 1px solid #ccc;
+      margin: 0 5px 10px;
+      display: inline-block;
+      height: 35px;
+      vertical-align: middle;
+    }
+  }
+}
+@media screen and (max-width: 736px) {
+  div.home-wrapper .home-content {
+    min-height: calc(100vh - 130px);
+  }
+}
 @media screen and (min-width: 768px) {
   ul.navbar-nav {
     float: right;
@@ -57,9 +104,65 @@
       }
     }
     .home-content {
-      min-height: 300px;
       .decorating-place {
         height: 150px;
+      }
+      .blog-wrapper {
+        &.home-page {
+          ul.blog-content {
+            li {
+              &:nth-child(odd) {
+                &::before {
+                  display: block;
+                  width: 100%;
+                }
+              }
+              &:last-child {
+                border-bottom: none;
+              }
+            }
+          }
+        }
+        ul.blog-content {
+          min-height: calc(100% - 200px);
+          li {
+            height: auto;
+            line-height: 1.3;
+            margin: 1px 0;
+            &:nth-child(even) {
+              width: 100%;
+              float: none;
+              border-bottom: 1px solid #00a5de;
+              padding: 5px 15px 15px;
+              &::before {
+                content: "Author Info: ";
+                font-weight: bold;
+                width: 35%;
+                display: inline-block;
+              }
+            }
+            &:nth-child(odd) {
+              width: 100%;
+              float: none;
+              border-right: none;
+              padding: 15px 15px 5px;
+              &::before {
+                content: "Blog Title: ";
+                font-weight: bold;
+                width: 35%;
+                display: inline-block;
+              }
+            }
+          }
+          li.blog-head-bar {
+            display: none;
+            border-bottom: none;
+            text-align: center;
+          }
+          hr {
+            display: none;
+          }
+        }
       }
     }
     .footer {
