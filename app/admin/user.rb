@@ -25,4 +25,10 @@ ActiveAdmin.register User do
     f.actions
   end
 
+  member_action :login_as, :method => :get do
+    user = User.find(params[:id])
+    bypass_sign_in
+    redirect_to user_path 
+  end
+
 end

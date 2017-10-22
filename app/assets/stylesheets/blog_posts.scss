@@ -1,0 +1,12 @@
+// Place all the styles related to the blog_posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+form.blog-form {
+  .blog-content-style {
+    min-height: 300px;
+    display: block;
+    border-radius: 5px;
+    width: 100%;
+    margin: 15px auto;
+  }
+}

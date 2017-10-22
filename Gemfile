@@ -37,7 +37,10 @@ gem 'devise'
 gem 'cancan' # or cancancan
 gem 'draper'
 gem 'pundit'
-
+gem 'activeadmin_quill_editor'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'paperclip'
+gem 'wysihtml5-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -54,6 +57,12 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg', '~> 0.21.0'
+  gem 'thin'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -14,3 +14,5 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap.min
+//= require wysihtml5
+//= require parser_rules/advanced

@@ -1,0 +1,18 @@
+<div class="blog-wrapper clearfix">
+  <div class="container clearfix">
+    <ul class="blog-content clearfix">
+      <% if @blog_posts.length > 0 %>
+        <% @blog_posts.each do |f| %>
+          <li class="title">
+            <%= f.title %>
+          </li>
+          <li class="author-detail">
+          </li>
+        <% end %>
+      <% else %>
+        <li>There are no existing blog! </li>
+      <% end %>
+      <a href="/blog_posts/new">Create new blog</a>
+    </ul>
+  </div>
+</div>
